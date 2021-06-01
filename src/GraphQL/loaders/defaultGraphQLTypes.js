@@ -108,9 +108,9 @@ const parseObjectFields = fields => {
 };
 
 const ANY = new GraphQLScalarType({
-  name: 'Any',
+  name: 'AnyObject',
   description:
-    'The Any scalar type is used in operations and types that involve any type of value.',
+    'The AnyObject scalar type is used in operations and types that involve any type of value.',
   parseValue: value => value,
   serialize: value => value,
   parseLiteral: ast => parseValue(ast),
@@ -176,9 +176,9 @@ const parseDateIsoLiteral = ast => {
 };
 
 const DATE = new GraphQLScalarType({
-  name: 'Date',
+  name: 'DateTime',
   description:
-    'The Date scalar type is used in operations and types that involve dates.',
+    'The DateTime scalar type is used in operations and types that involve dates.',
   parseValue(value) {
     if (typeof value === 'string' || value instanceof Date) {
       return {
