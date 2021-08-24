@@ -1,10 +1,11 @@
 import gql from 'graphql-tag';
 import { SchemaDirectiveVisitor } from '@graphql-tools/utils';
 import { FunctionsRouter } from '../../Routers/FunctionsRouter';
+import { ANY } from './defaultGraphQLTypes';
 
 export const definitions = gql`
   directive @resolve(to: String) on FIELD_DEFINITION
-  directive @mock(with: Any!) on FIELD_DEFINITION
+  directive @mock(with: ${ANY.name}!) on FIELD_DEFINITION
 `;
 
 const load = parseGraphQLSchema => {
